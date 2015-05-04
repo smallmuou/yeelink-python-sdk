@@ -2,16 +2,14 @@
 
 class YeelinkBaseError(Exception):
     def __str__(self):
-        return "***%s (%s)*** %s" % (self.status, self.reason, self.msg)
+        return "ERROR(%s): %s" % (self.code, self.reason)
 
 class YeelinkAuthError(YeelinkBaseError):
-    def __init__(self, status, reason, message={}):
-        self.status = status
+    def __init__(self, code, reason):
+        self.code = code
         self.reason = reason
-        self.message = message
 
 class YeelinkAPIError(YeelinkBaseError):
     def __init__(self, response):
-        self.status = response.status
+        self.code = response.code
         self.reason = response.reason
-        self.message = response.parsed

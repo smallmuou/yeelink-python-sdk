@@ -13,23 +13,23 @@ class DeviceModel(object):
         self.longitude = float(data['longitude'])
 
     def __repr__(self):
-        return 'title:%s, about:%s, tags:%s, local:%s, latitude:%f, longitude:%f' % (self.title, self.about, self.tags, self.local, self.latitude, self.longitude)
+        return '[id:%d title:%s, about:%s, tags:%s, local:%s, latitude:%f, longitude:%f]' % (self.id, self.title, self.about, self.tags, self.local, self.latitude, self.longitude)
 
 class Device(YeelinkAPIBase):
     def __repr__(self):
         return '<YeelinkAPI Device>'
 
-    def create(self, title, tags, location_locale, location_latitude, location_longitude, about):
+    def create(self, title, tags, about, location_locale, location_latitude, location_longitude):
         url = '/%s/devices' % (self.version)
-        data = '{"title":%s, "about":%s, "tags":%s, "location":{"local":%s, "latitude":%f, "longitude":%f}}' % (title, about, tags, location_locale, location_latitude, location_longitude)
-        jdata = json.dumps(data)
+        data = '{"title":"%s", "about":"%s", "tags":"%s", "location":{"local":"%s", "latitude":%f, "longitude":%f}}' % (title, about, tags, location_locale, location_latitude, location_longitude)
+        jdata = json.loads(data)
         return self._post(url, jdata)['device_id']
 
-    def update(self, device_id, title, tags, location_locale, location_latitude, location_longitude, about):
-        url = '/%s/devices/%d' % (self.version, device_id)
-        data = '{"title":%s, "about":%s, "tags":%s, "location":{"local":%s, "latitude":%f, "longitude":%f}}' % (title, about, tags, location_locale, location_latitude, location_longitude)
-        jdata = json.dumps(data)
-        return self._post(url, jdata)
+    def update(self, device_id, title, tags, about, location_locale, location_latitude, location_longitude):
+        url = '/%s/device/%d' % (self.version, device_id)
+        data = '{"title":"%s", "about":"%s", "tags":"%s", "location":{"local":"%s", "latitude":%f, "longitude":%f}}' % (title, about, tags, location_locale, location_latitude, location_longitude)
+        jdata = json.loads(data)
+        return self._put(url, jdata)
 
     def list(self):
         url = '/%s/devices' % (self.version)
@@ -37,7 +37,7 @@ class Device(YeelinkAPIBase):
         devices = []
         for item in items:
             device = DeviceModel(item)
-            device.id = item['id']
+            device.id = int(item['id'])
             devices.append(device)
         return devices
 

@@ -8,16 +8,18 @@ BASEURL='http://api.yeelink.net'
 
 def check_execption(func):
     def _check(*arg, **kws):
-        response = func(*arg, **kws)
-        if response.code >= 400:
-            if response.code == 403:
+        try:
+            response = func(*arg, **kws)
+            if response.code < 400:
+                body = response.read()
+                if body:
+                    return json.loads(body)
+                return body
+        except Exception as err:
+            if err.code == 403:
                 raise YeelinkAuthError(401, 'UNAUTHORIZED')
             else:
-                raise YeelinkAPIError(response)
-        body = response.read()
-        if body:
-            return json.loads(body)
-        return body
+                raise YeelinkAPIError(err)
 
     return _check
 
@@ -33,21 +35,21 @@ class YeelinkAPIBase(object):
         return '<YeelinkAPI Base>'
 
     @check_execption
-    def _get(self, url, **opts):
+    def _get(self, url):
         url = BASEURL+url
-        return http_get(url, self.apikey, **opts)
+        return http_get(url, self.apikey)
 
     @check_execption
-    def _post(self, url, **opts):
+    def _post(self, url, data):
         url = BASEURL+url
-        return http_post(url, self.apikey, **opts)
+        return http_post(url, self.apikey, data)
 
     @check_execption
-    def _put(self, url, **opts):
+    def _put(self, url, data):
         url = BASEURL+url
-        return http_put(url, self.apikey, **opts)
+        return http_put(url, self.apikey, data)
 
     @check_execption
-    def _delete(self, url, **opts):
+    def _delete(self, url):
         url = BASEURL+url
-        return http_delete(url, self.apikey, **opts)
+        return http_delete(url, self.apikey)

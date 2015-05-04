@@ -31,7 +31,3 @@ def http_delete(url, apikey):
     request.get_method = lambda:"DELETE"
     request.add_header(AUTHKEY, apikey)
     return urllib2.urlopen(request)
-'''
-resp = http_get('http://api.yeelink.net/v1.1/device/20748/sensor/36384/datapoints', 'bff018a9a85d0881ff016a1f7e6e53d0')
-print resp
-'''
