@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: yeelink
+Version: 1.1
+Summary: Yeelink SDK for python
+Home-page: http://liluo.github.com/douban-client
+Author: smallmuou
+Author-email: lvyexuwenfa100@126.com
+License: MIT License
+Description: See http://github.com/yeelink-python-sdk
+Keywords: Yeelink,Yeelink API
+Platform: any
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
