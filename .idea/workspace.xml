@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb8e41b7-9988-48b2-8306-6feb1cd71c13" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/yeelink/api/model.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/yeelink-1.1-py2.7.egg" afterPath="$PROJECT_DIR$/dist/yeelink-1.1-py2.7.egg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yeelink.egg-info/SOURCES.txt" afterPath="$PROJECT_DIR$/yeelink.egg-info/SOURCES.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/lib/yeelink/api/__init__.py" afterPath="$PROJECT_DIR$/build/lib/yeelink/api/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yeelink/api/__init__.py" afterPath="$PROJECT_DIR$/yeelink/api/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/lib/yeelink/api/datapoint.py" afterPath="$PROJECT_DIR$/build/lib/yeelink/api/datapoint.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yeelink/api/datapoint.py" afterPath="$PROJECT_DIR$/yeelink/api/datapoint.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/examples.py" afterPath="$PROJECT_DIR$/examples/examples.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/lib/yeelink/api/http.py" afterPath="$PROJECT_DIR$/build/lib/yeelink/api/http.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yeelink/api/http.py" afterPath="$PROJECT_DIR$/yeelink/api/http.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/lib/yeelink/api/model.py" afterPath="$PROJECT_DIR$/build/lib/yeelink/api/model.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/lib/yeelink/api/sensor.py" afterPath="$PROJECT_DIR$/build/lib/yeelink/api/sensor.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yeelink/api/sensor.py" afterPath="$PROJECT_DIR$/yeelink/api/sensor.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/lib/yeelink/yeelink.py" afterPath="$PROJECT_DIR$/build/lib/yeelink/yeelink.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yeelink/yeelink.py" afterPath="$PROJECT_DIR$/yeelink/yeelink.py" />
     </list>
     <ignored path="yeelink-python-sdk.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,8 +39,8 @@
       <file leaf-file-name="examples.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/examples/examples.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7564935" vertical-offset="314" max-vertical-offset="930">
-              <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.65909094" vertical-offset="479" max-vertical-offset="1125">
+              <caret line="59" column="17" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
               <folding>
                 <element signature="e#25#52#0" expanded="true" />
               </folding>
@@ -391,8 +377,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/examples.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7564935" vertical-offset="314" max-vertical-offset="930">
-          <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.65909094" vertical-offset="479" max-vertical-offset="1125">
+          <caret line="59" column="17" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
           <folding>
             <element signature="e#25#52#0" expanded="true" />
           </folding>

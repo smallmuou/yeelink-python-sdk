@@ -3,6 +3,9 @@
 from yeelink import Yeelink
 from yeelink.model import DataPointNumberModel
 
+import time
+import commands
+
 client = Yeelink()
 client.auth('bff018a9a85d0881ff016a1f7e6e53d0')
 
@@ -35,7 +38,7 @@ sensor_api = client.sensor(20748)
 
 
 
-sensors = sensor_api.list()
+#sensors = sensor_api.list()
 # print sensors
 
 # sensor_api.delete(36482)
@@ -50,7 +53,17 @@ sensors = sensor_api.list()
 
 # DataPoint API Examples
 datapoint_api = client.datapoint(20748, 36538)
-print datapoint_api.detail()
+
+i=0
+while(i < 10):
+    if datapoint_api.detail() == 1:
+        print 'Music ON'
+        a,b = commands.getstatusoutput('ls ~')
+        print b
+    else:
+        print 'Music Off'
+    i = i+1
+    time.sleep(3)
 #
 # #datapoint_api.create(DataPointNumberModel(1))
 #
