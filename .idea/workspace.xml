@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb8e41b7-9988-48b2-8306-6feb1cd71c13" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/device_example.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/yeelink-1.1-py2.7.egg" afterPath="$PROJECT_DIR$/dist/yeelink-1.1-py2.7.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/lib/yeelink/api/__init__.py" afterPath="$PROJECT_DIR$/build/lib/yeelink/api/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yeelink/api/__init__.py" afterPath="$PROJECT_DIR$/yeelink/api/__init__.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/lib/yeelink/api/base.py" afterPath="$PROJECT_DIR$/build/lib/yeelink/api/base.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yeelink/api/base.py" afterPath="$PROJECT_DIR$/yeelink/api/base.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/lib/yeelink/api/device.py" afterPath="$PROJECT_DIR$/build/lib/yeelink/api/device.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yeelink/api/device.py" afterPath="$PROJECT_DIR$/yeelink/api/device.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/device_example.py" afterPath="$PROJECT_DIR$/examples/device_example.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/lib/yeelink/api/http.py" afterPath="$PROJECT_DIR$/build/lib/yeelink/api/http.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yeelink/api/http.py" afterPath="$PROJECT_DIR$/yeelink/api/http.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/lib/yeelink/api/sensor.py" afterPath="$PROJECT_DIR$/build/lib/yeelink/api/sensor.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yeelink/api/sensor.py" afterPath="$PROJECT_DIR$/yeelink/api/sensor.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="yeelink-python-sdk.iws" />
@@ -33,11 +37,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="sensor.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/yeelink/api/sensor.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7155172" vertical-offset="320" max-vertical-offset="900">
+              <caret line="49" column="29" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="29" />
+              <folding>
+                <element signature="e#25#57#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="base.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/yeelink/api/base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="254" max-vertical-offset="870">
-              <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="125" max-vertical-offset="885">
+              <caret line="24" column="41" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="41" />
               <folding>
                 <element signature="e#25#77#0" expanded="true" />
               </folding>
@@ -45,33 +61,53 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="http.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/yeelink/api/http.py">
+      <file leaf-file-name="__init__.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yeelink/api/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
-              <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+              <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
               <folding>
-                <element signature="e#24#37#0" expanded="true" />
+                <element signature="e#25#64#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="device_example.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/examples/device_example.py">
+      <file leaf-file-name="__init__.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yeelink/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
-              <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
+              <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="device.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="yeelink.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yeelink/yeelink.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="examples.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examples/examples.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="97" max-vertical-offset="690">
+              <caret line="39" column="33" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="device.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/yeelink/api/device.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.60199004" vertical-offset="252" max-vertical-offset="855">
-              <caret line="41" column="34" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="207" max-vertical-offset="810">
+              <caret line="41" column="14" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="14" />
               <folding>
                 <element signature="e#25#57#0" expanded="true" />
               </folding>
@@ -94,15 +130,17 @@
       <list>
         <option value="$PROJECT_DIR$/yeelink/api/product.py" />
         <option value="$PROJECT_DIR$/setup.py" />
-        <option value="$PROJECT_DIR$/yeelink/api/__init__.py" />
         <option value="$PROJECT_DIR$/yeelink/api/model.py" />
-        <option value="$PROJECT_DIR$/yeelink/yeelink.py" />
         <option value="$PROJECT_DIR$/yeelink/__init__.py" />
         <option value="$PROJECT_DIR$/yeelink/api/error.py" />
+        <option value="$PROJECT_DIR$/yeelink/api/http.py" />
         <option value="$PROJECT_DIR$/yeelink/api/base.py" />
         <option value="$PROJECT_DIR$/examples/device_example.py" />
-        <option value="$PROJECT_DIR$/yeelink/api/http.py" />
+        <option value="$PROJECT_DIR$/yeelink/api/__init__.py" />
+        <option value="$PROJECT_DIR$/yeelink/yeelink.py" />
         <option value="$PROJECT_DIR$/yeelink/api/device.py" />
+        <option value="$PROJECT_DIR$/examples/examples.py" />
+        <option value="$PROJECT_DIR$/yeelink/api/sensor.py" />
       </list>
     </option>
   </component>
@@ -301,40 +339,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yeelink/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-          <folding>
-            <element signature="e#25#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yeelink/api/sensor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="616">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yeelink/yeelink.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
-          <caret line="9" column="21" selection-start-line="7" selection-start-column="0" selection-end-line="9" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yeelink/api/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
-          <caret line="10" column="14" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/yeelink/api/datapoint.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="616">
@@ -367,38 +371,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examples/device_example.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
-          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yeelink/api/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="254" max-vertical-offset="870">
-          <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
-          <folding>
-            <element signature="e#25#77#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/yeelink/api/http.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
-          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
+          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
           <folding>
             <element signature="e#24#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/yeelink/api/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
+          <folding>
+            <element signature="e#25#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yeelink/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yeelink/yeelink.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yeelink/api/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="125" max-vertical-offset="885">
+          <caret line="24" column="41" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="41" />
+          <folding>
+            <element signature="e#25#77#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/yeelink/api/device.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60199004" vertical-offset="252" max-vertical-offset="855">
-          <caret line="41" column="34" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="207" max-vertical-offset="810">
+          <caret line="41" column="14" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="14" />
+          <folding>
+            <element signature="e#25#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/examples.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="97" max-vertical-offset="690">
+          <caret line="39" column="33" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yeelink/api/sensor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7155172" vertical-offset="320" max-vertical-offset="900">
+          <caret line="49" column="29" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="29" />
           <folding>
             <element signature="e#25#57#0" expanded="true" />
           </folding>

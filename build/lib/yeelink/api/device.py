@@ -20,20 +20,17 @@ class Device(YeelinkAPIBase):
         return '<YeelinkAPI Device>'
 
     def create(self, title, tags, about, location_locale, location_latitude, location_longitude):
-        url = '/%s/devices' % (self.version)
+        url = '/devices'
         data = '{"title":"%s", "about":"%s", "tags":"%s", "location":{"local":"%s", "latitude":%f, "longitude":%f}}' % (title, about, tags, location_locale, location_latitude, location_longitude)
-        jdata = json.loads(data)
-        return self._post(url, jdata)['device_id']
+        return self._post(url, data)['device_id']
 
-    def update(self, device_id, title, tags, about, location_locale, location_latitude, location_longitude):
-        url = '/%s/device/%d' % (self.version, device_id)
+    def edit(self, device_id, title, tags, about, location_locale, location_latitude, location_longitude):
+        url = '/device/%d' % (device_id)
         data = '{"title":"%s", "about":"%s", "tags":"%s", "location":{"local":"%s", "latitude":%f, "longitude":%f}}' % (title, about, tags, location_locale, location_latitude, location_longitude)
-        print data, url
-        jdata = json.loads(data)
-        return self._put(url, jdata)
+        return self._put(url, data)
 
     def list(self):
-        url = '/%s/devices' % (self.version)
+        url = '/devices'
         items = self._get(url)
         devices = []
         for item in items:
@@ -42,10 +39,10 @@ class Device(YeelinkAPIBase):
             devices.append(device)
         return devices
 
-    def get(self, device_id):
-        url = '/%s/device/%d' % (self.version, device_id)
+    def detail(self, device_id):
+        url = '/device/%d' % (device_id)
         return DeviceModel(self._get(url))
 
     def delete(self, device_id):
-        url = '/%s/device/%d' % (self.version, device_id)
+        url = '/device/%d' % (device_id)
         return self._delete(url)

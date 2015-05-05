@@ -25,6 +25,7 @@ class YeelinkAPIBase(object):
     def __init__(self, apiversion, apikey):
         self.version = apiversion
         self.apikey = apikey
+        self.baseurl = BASEURL+'/'+self.version
         if self.apikey == "":
             raise YeelinkAuthError(401, 'UNAUTHORIZED')
 
@@ -33,20 +34,20 @@ class YeelinkAPIBase(object):
 
     @check_execption
     def _get(self, url):
-        url = BASEURL+url
+        url = self.baseurl+url
         return http_get(url, self.apikey)
 
     @check_execption
     def _post(self, url, data):
-        url = BASEURL+url
-        return http_post(url, self.apikey, data)
+        url = self.baseurl+url
+        return http_post(url, self.apikey, json.loads(data))
 
     @check_execption
     def _put(self, url, data):
-        url = BASEURL+url
-        return http_put(url, self.apikey, data)
+        url = self.baseurl+url
+        return http_put(url, self.apikey, json.loads(data))
 
     @check_execption
     def _delete(self, url):
-        url = BASEURL+url
+        url = self.baseurl+url
         return http_delete(url, self.apikey)

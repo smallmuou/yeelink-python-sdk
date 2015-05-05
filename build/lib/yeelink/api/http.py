@@ -31,5 +31,4 @@ def http_delete(url, apikey):
     request = urllib2.Request(url)
     request.get_method = lambda:"DELETE"
     request.add_header(AUTHKEY, apikey)
-    print url
     return urllib2.urlopen(request)
