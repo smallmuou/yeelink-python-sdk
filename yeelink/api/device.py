@@ -28,6 +28,7 @@ class Device(YeelinkAPIBase):
     def update(self, device_id, title, tags, about, location_locale, location_latitude, location_longitude):
         url = '/%s/device/%d' % (self.version, device_id)
         data = '{"title":"%s", "about":"%s", "tags":"%s", "location":{"local":"%s", "latitude":%f, "longitude":%f}}' % (title, about, tags, location_locale, location_latitude, location_longitude)
+        print data, url
         jdata = json.loads(data)
         return self._put(url, jdata)
 
@@ -46,5 +47,5 @@ class Device(YeelinkAPIBase):
         return DeviceModel(self._get(url))
 
     def delete(self, device_id):
-        url = '/%s/devices/%d' % (self.version, device_id)
+        url = '/%s/device/%d' % (self.version, device_id)
         return self._delete(url)

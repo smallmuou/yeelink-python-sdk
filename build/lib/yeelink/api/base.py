@@ -16,10 +16,7 @@ def check_execption(func):
                     return json.loads(body)
                 return body
         except Exception as err:
-            if err.code == 403:
-                raise YeelinkAuthError(401, 'UNAUTHORIZED')
-            else:
-                raise YeelinkAPIError(err)
+            print YeelinkAPIError(err)
 
     return _check
 

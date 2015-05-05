@@ -17,6 +17,7 @@ def http_put(url, apikey, data):
     request = urllib2.Request(url, jdata)
     request.get_method = lambda:"PUT"
     request.add_header(AUTHKEY, apikey)
+    print data, url
     return urllib2.urlopen(request)
 
 def http_post(url, apikey, data):
@@ -30,4 +31,5 @@ def http_delete(url, apikey):
     request = urllib2.Request(url)
     request.get_method = lambda:"DELETE"
     request.add_header(AUTHKEY, apikey)
+    print url
     return urllib2.urlopen(request)
