@@ -25,6 +25,7 @@ def http_post(url, apikey, data):
     request = urllib2.Request(url, jdata)
     request.get_method = lambda:"POST"
     request.add_header(AUTHKEY, apikey)
+    print data, url
     return urllib2.urlopen(request)
 
 def http_delete(url, apikey):

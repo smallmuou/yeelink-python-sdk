@@ -12,4 +12,3 @@ class Yeelink(YeelinkAPI):
     def auth(self, apikey):
         self.apikey = apikey
 
-

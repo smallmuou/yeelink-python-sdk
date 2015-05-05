@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from .base import YeelinkAPIBase
-import json
 
 SensorTypeValue = 'value'
 SensorTypeSwitcher = 'switcher'
@@ -25,18 +24,18 @@ class Sensor(YeelinkAPIBase):
     def __repr__(self):
         return '<YeelinkAPI Sensor>'
 
-    def create(self, device_id, type, title, about, tags, unit_name, unit_symbol):
-        url = '/device/%d/sensors'%(device_id)
+    def create(self, type, title, about, tags, unit_name, unit_symbol):
+        url = '/device/%d/sensors'%(self.device_id)
         data = '{"type":"%s", "title":"%s", "about":"%s", "tags":"%s", "unit":{"name":"%s", "symbol":"%s"}}' % (type, title, about, tags, unit_name, unit_symbol)
         return self._post(url, data)['sensor_id']
 
-    def update(self, device_id, sensor_id, title, about, tags, unit_name, unit_symbol):
-        url = '/device/%d/sensor/%d'%(device_id, sensor_id)
+    def update(self, sensor_id, title, about, tags, unit_name, unit_symbol):
+        url = '/device/%d/sensor/%d'%(self.device_id, sensor_id)
         data = '{"title":"%s", "about":"%s", "tags":"%s", "unit":{"name":"%s", "symbol":"%s"}}' % (title, about, tags, unit_name, unit_symbol)
         return self._put(url, data)
 
-    def list(self, device_id):
-        url = '/device/%d/sensors'%(device_id)
+    def list(self):
+        url = '/device/%d/sensors'%(self.device_id)
         items = self._get(url)
         sensors = []
         for item in items:
@@ -45,10 +44,10 @@ class Sensor(YeelinkAPIBase):
             sensors.append(sensor)
         return sensors
 
-    def detail(self, device_id, sensor_id):
-        url = '/device/%d/sensor/%d'%(device_id, sensor_id)
+    def detail(self, sensor_id):
+        url = '/device/%d/sensor/%d'%(self.device_id, sensor_id)
         return self._get(url)
 
-    def delete(self, device_id, sensor_id):
-        url = '/device/%d/sensor/%d'%(device_id, sensor_id)
+    def delete(self, sensor_id):
+        url = '/device/%d/sensor/%d'%(self.device_id, sensor_id)
         return self._delete(url)

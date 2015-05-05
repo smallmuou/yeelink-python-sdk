@@ -1,5 +1,6 @@
 setup.py
 yeelink/__init__.py
+yeelink/model.py
 yeelink/yeelink.py
 yeelink.egg-info/PKG-INFO
 yeelink.egg-info/SOURCES.txt
@@ -12,7 +13,6 @@ yeelink/api/device.py
 yeelink/api/error.py
 yeelink/api/history.py
 yeelink/api/http.py
-yeelink/api/model.py
 yeelink/api/photo.py
 yeelink/api/product.py
 yeelink/api/sensor.py

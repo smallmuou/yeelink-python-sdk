@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
 
 from yeelink import Yeelink
+from yeelink.model import DataPointNumberModel
 
 client = Yeelink()
 client.auth('bff018a9a85d0881ff016a1f7e6e53d0')
 
 
 # Device API Examples
-devices = client.device.list()
-print devices
+# devices = client.device.list()
+# print devices
 
 # device_id = client.device.create('Hello1111', 'H,a', 'Hello World', '111', 100.0, 200.0)
 # print 'New Device:%s' % (device_id)
@@ -18,7 +19,9 @@ print devices
 # client.device.delete(20810)
 
 # Sensor API Examples
-# sensor_id = client.sensor.create(20748, 'switcher', 'Test11111111', 'Test Hello', 'Testtags', '开关', '布尔值')
+sensor_api = client.sensor(20748)
+
+# sensor_id = sensor_api.create('switcher', 'Test11111111', 'Test Hello', 'Testtags', '开关', '布尔值')
 # print sensor_id
 #
 # sensor_id = client.sensor.create(20748, 'value', 'Test11111111', 'Test Hello', 'Testtags', '开关', '布尔值')
@@ -32,9 +35,23 @@ print devices
 
 
 
-sensors = client.sensor.list(20748)
-print sensors
+sensors = sensor_api.list()
+# print sensors
 
-#client.sensor.delete(20748, 36477)
+# sensor_api.delete(36482)
+# sensor_api.delete(36483)
+# sensor_api.delete(36484)
+# sensor_api.delete(36485)
+# sensor_api.delete(36486)
+# sensor_api.delete(36487)
+# sensor_api.delete(36488)
 
-client.sensor.detail(20748, 36489)
+# sensor_api.detail(36523)
+
+# DataPoint API Examples
+datapoint_api = client.datapoint(20748, 36538)
+print datapoint_api.detail()
+#
+# #datapoint_api.create(DataPointNumberModel(1))
+#
+# datapoint_api.edit()
