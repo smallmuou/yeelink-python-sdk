@@ -16,9 +16,19 @@ class DataPointNumberModel(DataPointBaseModel):
         self.value = value
 
     def json_data(self):
-        x = time.localtime(self.timestamp)
-        timestr = time.strftime('%Y-%m-%dT%H:%M:%S')
-        return '{"timestamp":"%s", "value":%d}'%(timestr, self.value)
+        return '{"timestamp":"%s", "value":%d}'%(self.json_key(), self.json_value())
+
+    def json_key(self):
+        timestr = ''
+        if isinstance(self.timestamp, float):
+            x = time.localtime(self.timestamp)
+            timestr = time.strftime('%Y-%m-%dT%H:%M:%S')
+        else:
+            timestr = self.timestamp
+        return timestr
+
+    def json_value(self):
+        return self.value
 
 class DataPointGPSModel(DataPointBaseModel):
     def __init__(self, latitude, longitude, speed, offset=True, timestamp = 0):
@@ -33,10 +43,14 @@ class DataPointGPSModel(DataPointBaseModel):
         self.offset = offset
 
     def json_data(self):
-        x = time.localtime(self.timestamp)
-        timestr = time.strftime('%Y-%M-%dT%h:%m:%s')
-        return '{"timestamp":"%s", "value":{"lat":%f, "lng":%f, "speed":%f}}'%(timestr, self.latitude, self.longitude, self.speed)
+        return '{"timestamp":"%s", "value":%s}'%(self.json_key(), self.json_value())
 
+    def json_key(self):
+        x = time.localtime(self.timestamp)
+        return time.strftime('%Y-%M-%dT%h:%m:%s')
+
+    def json_value(self):
+        return '{"lat":%f, "lng":%f, "speed":%f}'%(self.latitude, self.longitude, self.speed)
 
 class DataPointGenericsModel(DataPointBaseModel):
     def __init__(self, key, value):
@@ -44,4 +58,10 @@ class DataPointGenericsModel(DataPointBaseModel):
         self.value = value
 
     def json_data(self):
-        return '{"key":"%s", "value":%s}' %(self.key, self.value)
+        return '{"key":"%s", "value":%s}' %(self.json_key(), self.json_value())
+
+    def json_key(self):
+        return self.key
+
+    def json_value(self):
+        return self.value

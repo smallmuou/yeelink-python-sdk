@@ -43,6 +43,11 @@ class YeelinkAPIBase(object):
         return http_post(url, self.apikey, json.loads(data))
 
     @check_execption
+    def _post_original(self, url, data):
+        url = self.baseurl+url
+        return http_post(url, self.apikey, data)
+
+    @check_execption
     def _put(self, url, data):
         url = self.baseurl+url
         return http_put(url, self.apikey, json.loads(data))

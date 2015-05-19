@@ -16,8 +16,12 @@ class DataPointNumberModel(DataPointBaseModel):
         self.value = value
 
     def json_data(self):
-        x = time.localtime(self.timestamp)
-        timestr = time.strftime('%Y-%m-%dT%H:%M:%S')
+        timestr = ''
+        if isinstance(self.timestamp, float):
+            x = time.localtime(self.timestamp)
+            timestr = time.strftime('%Y-%m-%dT%H:%M:%S')
+        else:
+            timestr = self.timestamp
         return '{"timestamp":"%s", "value":%d}'%(timestr, self.value)
 
 class DataPointGPSModel(DataPointBaseModel):
