@@ -2,12 +2,6 @@
 
 from .base import YeelinkAPIBase
 
-SensorTypeValue = 'value'
-SensorTypeSwitcher = 'switcher'
-SensorTypeGPS = 'gps'
-SensorTypeGEN = 'gen'
-SensorTypePhoto = 'photo'
-
 class SensorModel(object):
     def __init__(self, data):
         self.type = int(data['type'])

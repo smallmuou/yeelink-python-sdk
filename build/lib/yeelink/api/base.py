@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from .error import YeelinkAuthError, YeelinkAPIError
-from .http import http_get, http_delete, http_post, http_put
+from .http import http_get, http_delete, http_post, http_put, http_post_original
 import json
 
 BASEURL='http://api.yeelink.net'
@@ -16,6 +16,20 @@ def check_execption(func):
                     return json.loads(body)
                 return body
         except Exception as err:
+            print err
+            print YeelinkAPIError(err)
+
+    return _check
+
+def check_execption_original(func):
+    def _check(*arg, **kws):
+        try:
+            response = func(*arg, **kws)
+            if response.code < 400:
+                body = response.read()
+                return body
+        except Exception as err:
+            print err
             print YeelinkAPIError(err)
 
     return _check
@@ -37,10 +51,20 @@ class YeelinkAPIBase(object):
         url = self.baseurl+url
         return http_get(url, self.apikey)
 
+    @check_execption_original
+    def _get_original(self, url):
+        url = self.baseurl+url
+        return http_get(url, self.apikey)
+
     @check_execption
     def _post(self, url, data):
         url = self.baseurl+url
         return http_post(url, self.apikey, json.loads(data))
+
+    @check_execption
+    def _post_original(self, url, data):
+        url = self.baseurl+url
+        return http_post_original(url, self.apikey, data)
 
     @check_execption
     def _put(self, url, data):

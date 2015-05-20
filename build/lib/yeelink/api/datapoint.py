@@ -25,12 +25,14 @@ class DataPoint(YeelinkAPIBase):
         elif isinstance(data, DataPointBaseModel):
             return self._post(url, data.json_data())
 
-    def edit(self, key):
-        url = '/device/%d/sensor/%d/datapoint/%s'%(self.device_id, self.sensor_id, key)
-        return self._put(url, '{"value":99}')
-
+    def edit(self, model):
+        url = '/device/%d/sensor/%d/datapoint/%s'%(self.device_id, self.sensor_id, model.json_key())
+        return self._put(url, '{"value":%s}'%(model.json_value()))
 
     def detail(self, key=''):
         url = '/device/%d/sensor/%d/datapoint/%s'%(self.device_id, self.sensor_id, key)
         return self._get(url)['value']
 
+    def delete(self, key):
+        url = '/device/%d/sensor/%d/datapoint/%s'%(self.device_id, self.sensor_id, key)
+        return self._delete(url)

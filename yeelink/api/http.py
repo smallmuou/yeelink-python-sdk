@@ -22,10 +22,12 @@ def http_put(url, apikey, data):
 
 def http_post(url, apikey, data):
     jdata = json.dumps(data)
-    request = urllib2.Request(url, jdata)
+    return http_post_original(url, apikey, jdata)
+
+def http_post_original(url, apikey, data):
+    request = urllib2.Request(url, data)
     request.get_method = lambda:"POST"
     request.add_header(AUTHKEY, apikey)
-    print data, url
     return urllib2.urlopen(request)
 
 def http_delete(url, apikey):

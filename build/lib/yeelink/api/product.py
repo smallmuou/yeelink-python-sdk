@@ -1,34 +1,24 @@
-from .device import Device
-from .sensor import Sensor
-from .datapoint import DataPoint
-from .photo import Photo
-from .history import History
-from .product import Product
+# -*- coding: utf-8 -*-
 
-class YeelinkAPI(object):
+from .base import YeelinkAPIBase
+from .device import DeviceModel
+
+class Product(YeelinkAPIBase):
     def __repr__(self):
-        return '<Yeelink API>'
+        return '<YeelinkAPI Product>'
 
-    @property
-    def device(self):
-        return Device(self.apikey)
+    def detail(self):
+        url = '/product/%d'%(self.product_sn)
+        item = self._get(url)
+        device = DeviceModel(item)
+        device.id = int(item['id'])
+        return device
 
-    @property
-    def sensor(self):
-        return Sensor(self.apikey)
+    def bind(self, user):
+        url = '/product/bind/%d'%(self.product_sn)
+        body = '{"user_login":%s, "force":true}'%(user)
+        return self._post(url)
 
-    @property
-    def datapoint(self):
-        return Datapoint(self.apikey)
-
-    @property
-    def photo(self):
-        return Photo(self.apikey)
-
-    @property
-    def history(self):
-        return History(self.apikey)
-
-    @property
-    def product(self):
-        return Product(self.apikey)
+    def feed(self):
+        url = '/product/feed/%d'%(self.product_sn)
+        return self._post(url)['message']
