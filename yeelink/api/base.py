@@ -16,8 +16,7 @@ def check_execption(func):
                     return json.loads(body)
                 return body
         except Exception as err:
-            print err
-            print YeelinkAPIError(err)
+            raise YeelinkAPIError(err)
 
     return _check
 
@@ -29,8 +28,7 @@ def check_execption_original(func):
                 body = response.read()
                 return body
         except Exception as err:
-            print err
-            print YeelinkAPIError(err)
+            raise YeelinkAPIError(err)
 
     return _check
 
@@ -41,7 +39,7 @@ class YeelinkAPIBase(object):
         self.apikey = apikey
         self.baseurl = BASEURL+'/'+self.version
         if self.apikey == "":
-            raise YeelinkAuthError(401, 'UNAUTHORIZED')
+            raise YeelinkAPIError('UNAUTHORIZED')
 
     def __repr__(self):
         return '<YeelinkAPI Base>'
