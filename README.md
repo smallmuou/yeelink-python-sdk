@@ -32,15 +32,15 @@ api key可以进入你的用户管理首页查看.
 * 设备操作
 <pre>
 device_adapter = client.device()
-
+# 创建
 device_id = device_adapter.create('Test', 'Test tags', 'Test about', 'fujian', 100.0, 200.0)
-
+# 编辑
 device_adapter.edit(device_id, 'Test1', 'Test1 tags', 'Test1 about', 'fujian', 100.0, 100.0)
-
+# 罗列
 devices = device_adapter.list()
 for device in devices:
     print 'id:'+ str(device.id) + ',title:'+ device.title
-
+#  删除
 device_adapter.delete(device_id)
 </pre>
 
