@@ -21,9 +21,9 @@ class Sensor(YeelinkAPIBase):
     def create(self, type, title, about, tags, unit_name, unit_symbol):
         url = '/device/%d/sensors'%(self.device_id)
         data = '{"type":"%s", "title":"%s", "about":"%s", "tags":"%s", "unit":{"name":"%s", "symbol":"%s"}}' % (type, title, about, tags, unit_name, unit_symbol)
-        return self._post(url, data)['sensor_id']
+        return int(self._post(url, data)['sensor_id'])
 
-    def update(self, sensor_id, title, about, tags, unit_name, unit_symbol):
+    def edit(self, sensor_id, title, about, tags, unit_name, unit_symbol):
         url = '/device/%d/sensor/%d'%(self.device_id, sensor_id)
         data = '{"title":"%s", "about":"%s", "tags":"%s", "unit":{"name":"%s", "symbol":"%s"}}' % (title, about, tags, unit_name, unit_symbol)
         return self._put(url, data)

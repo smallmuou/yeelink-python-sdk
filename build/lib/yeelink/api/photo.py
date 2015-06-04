@@ -8,17 +8,15 @@ class Photo(YeelinkAPIBase):
 
     def create_from_path(self, path):
         file = open(path, 'rb')
-        # try:
-        #     binary = file.read()
-        # except Exception as err:
-        #     print 'path not exist.'
-        binary = file.read()
+        try:
+            binary = file.read()
+        except Exception as err:
+            print 'path not exist.'
         file.close()
         return self.create(binary)
 
     def create(self, binary):
         url = '/device/%d/sensor/%d/photos'%(self.device_id, self.sensor_id)
-        print url
         return self._post_original(url, binary)
 
     def info(self, key = ''):

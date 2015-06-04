@@ -20,7 +20,6 @@ class DataPoint(YeelinkAPIBase):
             if len(body) > 1:
                 body = body[:-1]
             body = body + ']'
-            print body
             return self._post(url, body)
         elif isinstance(data, DataPointBaseModel):
             return self._post(url, data.json_data())

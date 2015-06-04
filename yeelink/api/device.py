@@ -22,7 +22,7 @@ class Device(YeelinkAPIBase):
     def create(self, title, tags, about, location_locale, location_latitude, location_longitude):
         url = '/devices'
         data = '{"title":"%s", "about":"%s", "tags":"%s", "location":{"local":"%s", "latitude":%f, "longitude":%f}}' % (title, about, tags, location_locale, location_latitude, location_longitude)
-        return self._post(url, data)['device_id']
+        return int(self._post(url, data)['device_id'])
 
     def edit(self, device_id, title, tags, about, location_locale, location_latitude, location_longitude):
         url = '/device/%d' % (device_id)

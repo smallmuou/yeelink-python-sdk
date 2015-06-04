@@ -1,53 +1,71 @@
 # -*- coding: utf-8 -*-
 
-from yeelink import Yeelink
-from yeelink import SensorTypeValue, SensorTypeSwitcher, SensorTypePhoto, SensorTypeGEN, SensorTypeGPS
+from yeelink import Yeelink, SensorTypeValue, SensorTypeSwitcher, SensorTypePhoto, SensorTypeGEN, SensorTypeGPS
+from yeelink.model import DataPointNumberModel
 
 client = Yeelink()
-client.auth('bff018a9a85d0881ff016a1f7e6e53d0')
+client.auth('<your api key>')
 
-
-# Device API Examples
+##############################
+#            设备             #
+##############################
 device_adapter = client.device()
 
-#print device_adapter.create('Hello1111', 'H,a', 'Hello World', '111', 100.0, 200.0)
+# 创建设备
+device_id = device_adapter.create('Test', 'Test tags', 'Test about', 'fujian', 100.0, 200.0)
+print "创建的设备id:"+str(device_id)
 
-# device_adapter.edit(20801, '1212', '1111', '3333', '0000', 100.0, 100.0)
+# 编辑设备
+device_adapter.edit(device_id, 'Test1', 'Test1 tags', 'Test1 about', 'fujian', 100.0, 100.0)
 
-# device_adapter.delete(20810)
+# 罗列设备, 返回DeviceModel列表, 详见device.py
+devices = device_adapter.list()
+for device in devices:
+    print 'id:'+ str(device.id) + ',title:'+ device.title
 
-# Sensor API Examples
-sensor_adapter = client.sensor(21034)
-# print sensor_adapter.create(SensorTypeGPS, 'value', 'Test Hello', 'Testtags', '开关', '布尔值')
+# 删除设备
+device_adapter.delete(device_id)
 
-# sensor_id = sensor_adapter.create('switcher', 'Test11111111', 'Test Hello', 'Testtags', '开关', '布尔值')
-# print sensor_id
-#
-# sensor_id = client.sensor.create(20748, 'value', 'Test11111111', 'Test Hello', 'Testtags', '开关', '布尔值')
-# print sensor_id
-# sensor_id = client.sensor.create(20748, 'gps', 'Test11111111', 'Test Hello', 'Testtags', '开关', '布尔值')
-# print sensor_id
-# sensor_id = client.sensor.create(20748, 'gen', 'Test11111111', 'Test Hello', 'Testtags', '开关', '布尔值')
-# print sensor_id
-# sensor_id = client.sensor.create(20748, 'photo', 'Test11111111', 'Test Hello', 'Testtags', '开关', '布尔值')
-# print sensor_id
+##############################
+#          传感器             #
+##############################
+sensor_adapter = client.sensor(device_id)
 
-#print sensor_adapter.list()
-#
-# sensor_adapter.delete(36844)
+# 创建传感器
+sensor_id = sensor_adapter.create(SensorTypeValue, 'Test', 'Test about', 'Test tag', '开关', '布尔值')
 
-# sensor_adapter.detail(36523)
+# 编辑传感器
+sensor_adapter.edit(sensor_id, 'Test1', 'Test1 about', 'Test1 tag', '数值', '米')
 
-# DataPoint API Examples
-#datapoint_api = client.datapoint(21034, 36869)
-#print datapoint_api.detail()
+# 罗列传感器, 返回SensorModel，详见sensor.py
+sensors = sensor_adapter.list()
+for sensor in sensors:
+    print sensor
 
-#datapoint_api.create(DataPointNumberModel(1000))
-#datapoint_api.create([DataPointNumberModel(77, '2015-05-09T12:10:23'), DataPointNumberModel(80, '2015-05-09T12:11:23')])
-#
-#datapoint_api.edit('2015-05-09T12:02:29')
+# 查看详情
+sensor_adapter.detail(sensor_id)
 
-# Photo
-photo_adapter = client.photo(21034, 38080)
+# 删除传感器
+sensor_adapter.delete(sensor_id)
+
+##############################
+#           数据              #
+##############################
+datapoint_adapter = client.datapoint(device_id, sensor_id)
+
+# 创建数据点
+datapoint_adapter.create(DataPointNumberModel(1000))
+
+# 编辑数据点
+datapoint_adapter.edit('2015-05-09T12:02:29')
+
+##############################
+#            照片             #
+##############################
+photo_adapter = client.photo(device_id, sensor_id)
+
+# 上传图片
 photo_adapter.create_from_path('/Users/starnet/Downloads/1.gif')
+
+# 图片信息
 print photo_adapter.info()

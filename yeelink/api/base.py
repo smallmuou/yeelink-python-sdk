@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from .error import YeelinkAuthError, YeelinkAPIError
+from .error import YeelinkAPIError
 from .http import http_get, http_delete, http_post, http_put, http_post_original
 import json
 
